@@ -21,8 +21,17 @@ extra-source-files:
   LICENSE.txt
 
 library
-  -- exposed-modules:
+  exposed-modules:
+    Network.API.Twitter
+    Data.API.Twitter.UserSearch
+    Data.API.Twitter.User
 
-  -- other-modules:
+  other-modules:
+    Network.API.Twitter.Shim
+    Data.API.Twitter.Query
+    Data.API.Twitter.QueryResponsePair
 
-  build-depends: base ==4.5.*
+  build-depends:
+    base ==4.5.*
+    aeson ==0.6.*
+    hoauth ==0.3.*
