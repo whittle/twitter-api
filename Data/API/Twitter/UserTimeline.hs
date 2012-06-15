@@ -12,11 +12,11 @@ import qualified Data.Vector as V
 
 import Data.API.Twitter.Query
 import Data.API.Twitter.QueryResponsePair
-import Data.API.Twitter.Tweet
+import Data.API.Twitter.Type
 
 data UserTimelineQuery = UserTimelineQuery
-                         { userId :: Maybe Integer
-                         , screenName :: Maybe Text
+                         { queryUserId :: Maybe Integer
+                         , queryScreenName :: Maybe Text
                          , sinceId :: Maybe Integer
                          , count :: Maybe Integer
                          , maxId :: Maybe Integer
@@ -33,7 +33,7 @@ instance Default UserTimelineQuery where
 
 instance Query UserTimelineQuery where
   toPathSegments _ = ["statuses", "user_timeline.json"]
-  toQueryItems u = [("screen_name", unpack . fromJust $ screenName u)]
+  toQueryItems u = [("screen_name", unpack . fromJust $ queryScreenName u)]
 
 data UserTimelinePage = UserTimelinePage
                         { tweets :: [Tweet]

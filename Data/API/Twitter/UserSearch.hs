@@ -11,7 +11,7 @@ import qualified Data.Vector as V
 
 import Data.API.Twitter.Query
 import Data.API.Twitter.QueryResponsePair
-import Data.API.Twitter.User
+import Data.API.Twitter.Type
 
 data UserSearchQuery = UserSearchQuery
                        { queryText :: Text
