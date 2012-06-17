@@ -9,7 +9,7 @@ maintainer:     jason.whittle@gmail.com
 copyright:      Copyright (c) 2012 Jason A. Whittle
 category:       Network, API
 build-type:     Simple
-cabal-version:  >=1.8
+cabal-version:  >= 1.8
 stability:      experimental
 tested-with:    GHC == 7.4.1
 bug-reports:    https://github.com/whittle/twitter/issues
@@ -23,15 +23,18 @@ extra-source-files:
 library
   exposed-modules:
     Network.API.Twitter
+    Data.API.Twitter.Type
     Data.API.Twitter.UserSearch
-    Data.API.Twitter.User
+    Data.API.Twitter.UserTimeline
 
   other-modules:
     Network.API.Twitter.Shim
     Data.API.Twitter.Query
     Data.API.Twitter.QueryResponsePair
 
-  build-depends:
-    base ==4.5.*
-    aeson ==0.6.*
-    hoauth ==0.3.*
+  build-depends: base == 4.5.*
+               , aeson == 0.6.*
+               , default == 0.4.*
+               , hoauth == 0.3.*
+               , text == 0.11.*
+               , vector == 0.9.*
