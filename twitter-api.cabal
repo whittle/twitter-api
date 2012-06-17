@@ -1,4 +1,4 @@
-name:           twitter
+name:           twitter-api
 version:        0.1.0.0
 synopsis:       Access the Twitter API.
 homepage:       https://github.com/whittle/twitter
