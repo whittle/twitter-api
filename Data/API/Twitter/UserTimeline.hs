@@ -4,7 +4,7 @@ module Data.API.Twitter.UserTimeline
        , UserTimelinePage(..)
        ) where
 
-import Data.Maybe (fromJust)
+import Data.Maybe (isJust, fromJust, catMaybes)
 import Data.Text (Text, unpack)
 import Data.Default (Default(..))
 import Data.Aeson
@@ -32,8 +32,16 @@ instance Default UserTimelineQuery where
   def = UserTimelineQuery Nothing Nothing Nothing Nothing Nothing Nothing Nothing Nothing Nothing Nothing Nothing
 
 instance Query UserTimelineQuery where
-  toPathSegments _ = ["statuses", "user_timeline.json"]
-  toQueryItems u = [("screen_name", unpack . fromJust $ queryScreenName u)]
+  toPathSegments = const ["statuses", "user_timeline.json"]
+  toQueryItems q = catMaybes [uidTerm q, snTerm q]
+
+uidTerm :: UserTimelineQuery -> Maybe (String, String)
+uidTerm q | isJust $ queryUserId q = Just ("user_id", show . fromJust $ queryUserId q)
+          | otherwise = Nothing
+
+snTerm :: UserTimelineQuery -> Maybe (String, String)
+snTerm q | isJust $ queryScreenName q = Just ("screen_name", unpack . fromJust $ queryScreenName q)
+         | otherwise = Nothing
 
 data UserTimelinePage = UserTimelinePage
                         { tweets :: [Tweet]
