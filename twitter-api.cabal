@@ -25,6 +25,7 @@ library
     Network.API.Twitter
     Data.API.Twitter.Type
     Data.API.Twitter.UserSearch
+    Data.API.Twitter.UserShow
     Data.API.Twitter.UserTimeline
 
   other-modules:

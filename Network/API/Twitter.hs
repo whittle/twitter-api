@@ -12,8 +12,6 @@ import Data.Aeson
 import Network.API.Twitter.Shim
 import Data.API.Twitter.Query
 import Data.API.Twitter.QueryResponsePair
-import Data.API.Twitter.UserSearch
-import Data.API.Twitter.UserTimeline
 
 -- reqUrl = fromJust $ parseURL "https://api.twitter.com/oauth/request_token"
 -- accUrl = fromJust $ parseURL "https://api.twitter.com/oauth/access_token"
