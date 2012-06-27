@@ -1,5 +1,6 @@
 module Network.API.Twitter
-       ( ) where
+       ( getResponse
+       ) where
 
 import Data.Maybe (fromJust)
 import Network.OAuth.Consumer
