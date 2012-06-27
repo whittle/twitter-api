@@ -1,5 +1,5 @@
 name:             twitter-api
-version:          0.1.0.3
+version:          0.1.1.0
 synopsis:         Access the Twitter API.
 homepage:         https://github.com/whittle/twitter-api
 license:          MIT
