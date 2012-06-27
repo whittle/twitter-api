@@ -1,7 +1,7 @@
 {-# LANGUAGE OverloadedStrings, MultiParamTypeClasses #-}
 module Data.API.Twitter.UserSearch
        ( UserSearchQuery(..)
-       , UserSearchPage
+       , UserSearchPage(..)
        ) where
 
 import Data.Text (Text, unpack)
