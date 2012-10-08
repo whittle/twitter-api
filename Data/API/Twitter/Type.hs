@@ -81,7 +81,7 @@ data User = User { userId :: Integer
                  , contributorsEnabled :: Bool
                  , protected :: Bool
                  , verified :: Bool
-                 , showAllInlineMedia :: Bool
+                 , showAllInlineMedia :: Maybe Bool
                  , profileTextColor :: Text
                  , profileLinkColor :: Text
                  , profileBackgroundTile :: Bool
@@ -124,7 +124,7 @@ instance FromJSON User where
                          <*> o .: "contributors_enabled"
                          <*> o .: "protected"
                          <*> o .: "verified"
-                         <*> o .: "show_all_inline_media"
+                         <*> o .:? "show_all_inline_media"
                          <*> o .: "profile_text_color"
                          <*> o .: "profile_link_color"
                          <*> o .: "profile_background_tile"
